@@ -60,7 +60,7 @@ public class Tests {
 
     @DataProvider
     public Object[][] caseTaskProvider() {
-        return new Object[][]{{(byte)1, "bad"}, {(byte)-3, "error"},{(byte)3,"satisfactory"}};
+        return new Object[][]{{(byte)1, "bad"}, {(byte)-3, "exception"},{(byte)3,"satisfactory"}};
     }
 
 
