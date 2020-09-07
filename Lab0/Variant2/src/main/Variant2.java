@@ -51,7 +51,7 @@ public class Variant2 {
                     break;
             case 5: result="excellent";
                     break;
-            default: result="error";
+            default: result="exception";
         }
         return result;
     }
@@ -127,8 +127,10 @@ public class Variant2 {
     public static int[] arrayTask(int number) {
 
         int[] powersOfTwo = new int[number];
+        int tempMultiplyStoring=2;
         for (int i = 0; i < number; i++) {
-            powersOfTwo[i]= (int) Math.pow(2,i+1);
+            powersOfTwo[i]= tempMultiplyStoring;
+            tempMultiplyStoring*=2;
         }
         return powersOfTwo;
     }
