@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import postgreSQL.*;
 import model.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -14,21 +16,30 @@ public class Main {
         return new java.util.Scanner(System.in).nextLine();
     }
 
-    public static void main(String[] args) {
+
+
+    public static void main(String[] args) throws SQLException {
+        BookDatabase c = new BookDatabase();
+        AuthorDatabase u = new AuthorDatabase();
+        List<Book> Database_book = new ArrayList<>();
         try {
-            QuerryTool.dropAuthor();
-            QuerryTool.dropBook();
+            c.createTableBook();
 
-            pause();
 
-            QuerryTool.createAuthor();
-            QuerryTool.createBook();
+
+            Database_book = c.getAll();
+
 
         }
         catch(SQLException e) {
             System.out.println("Error: " + e.getMessage());
             return;
         }
+
+        for (Book book: Database_book) {
+            System.out.println(book);
+        }
+
 
 
     }

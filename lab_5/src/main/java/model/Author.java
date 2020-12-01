@@ -1,9 +1,11 @@
 package model;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Objects;
 public class Author {
 
+    private int id;
     private String name;
 
     private String secondName;
@@ -13,13 +15,41 @@ public class Author {
     private LocalDate dateOfBirth;
 
 
-    public Author(String name,String secondName,String surname,LocalDate dateOfBirth){
+
+    public Author(int id,String name,String secondName,String surname,LocalDate dateOfBirth){
+        this.id=id;
         this.name=name;
         this.secondName=secondName;
         this.surname=surname;
         this.dateOfBirth=dateOfBirth;
+
     }
 
+    public Author(String name,String secondName){
+        this.name=name;
+        this.secondName=secondName;
+    }
+
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 
     public String getName() {
         return name;
@@ -40,6 +70,9 @@ public class Author {
         return dateOfBirth;
     }
 
+    public int getId() {
+        return id;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -60,7 +93,8 @@ public class Author {
     @Override
     public String toString() {
         return "Author{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", secondName='" + secondName + '\'' +
                 ", surname='" + surname + '\'' +
                 ", dateOfBirth=" + dateOfBirth +

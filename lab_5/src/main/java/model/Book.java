@@ -6,21 +6,46 @@ import java.util.Objects;
 
 public class Book {
 
+    private int id;
     private String name;
     private Integer yearOfPublish;
     private String publishingHouse;
     private Author author;
+    private int author_id;
 
 
-    public Book(String name, int yearOfPublish,String publishingHouse,Author author){
+    public Book(int id,String name, int yearOfPublish,String publishingHouse,Author author,int author_id){
+        this.id=id;
         this.name=name;
         this.yearOfPublish=yearOfPublish;
         this.publishingHouse=publishingHouse;
         this.author=author;
+        this.author_id=author_id;
     }
     public Book()
     {
 
+    }
+
+    public Book(String name)
+    {
+        this.name=name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getAuthor_id() {
+        return author_id;
+    }
+
+    public void setAuthor_id(int author_id) {
+        this.author_id = author_id;
     }
 
     public void setName(String name) {
@@ -78,10 +103,12 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", yearOfPublish=" + yearOfPublish +
                 ", publishingHouse='" + publishingHouse + '\'' +
                 ", author=" + author +
+                ", author_id=" + author_id +
                 '}';
     }
 }
