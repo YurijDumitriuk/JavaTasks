@@ -24,7 +24,12 @@ public class Main {
         List<Book> Database_book = new ArrayList<>();
         try {
             c.createTableBook();
+            Director director = new Director();
 
+            BookBuilder builder = new BookBuilder();
+            director.constructBook1(builder);
+            Book book1 = builder.getResult();
+            c.addBook(book1);
 
 
             Database_book = c.getAll();
